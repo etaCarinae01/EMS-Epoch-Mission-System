@@ -82,6 +82,16 @@ Copy the <b>Missions</b> folder from the EMS download ,copy and paste the EMS Fo
 	
 <b>Edit server_updateObject.sqf</b><br>Located: dayz_server\compile\server_updateObject.sqf
 
+
+<b>Insert the code below before : if (!_parachuteWest and !(locked _object)) then {:</b>
+
+    if (_object getVariable "Sarge" == 1) exitWith {};
+
+
+    if (_object getVariable "Sarge" == 1) exitWith {};
+
+    if (!_parachuteWest and !(locked _object)) then {
+
 <b>Around line 22 look for this:</b>
 
     { 
@@ -90,16 +100,16 @@ Copy the <b>Missions</b> folder from the EMS download ,copy and paste the EMS Fo
       _objectID = "0";
       _uid = "0";
     };
-
-<b>Insert this after it:</b>
-
-    if (_object getVariable "Sarge" == 1) exitWith {};
-
     
    <b>comment this out and add the line below :</b>
-   //if (_objectID == "0" && _uid == "0") then
    
-    if (_objectID == "0" && _uid == "0" && (vehicle _object getVariable ["Sarge",0] != 1)) then
+	 //if (_objectID == "0" && _uid == "0") then
+	  if (_objectID == "0" && _uid == "0" && (vehicle _object getVariable ["Sarge",0] != 1)) then
+	 {
+		_object_position = getPosATL _object;
+    	_isNotOk = true;
+	};
+};
 
 <b>Edit server_cleanup.fsm</b><br>Located: dayz_server\system\server_cleanup.fsm
 
