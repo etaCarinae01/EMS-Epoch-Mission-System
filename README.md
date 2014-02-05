@@ -87,9 +87,6 @@ Copy the <b>Missions</b> folder from the EMS download ,copy and paste the EMS Fo
 
     if (_object getVariable "Sarge" == 1) exitWith {};
 
-
-    if (_object getVariable "Sarge" == 1) exitWith {};
-
     if (!_parachuteWest and !(locked _object)) then {
 
 <b>Around line 22 look for this:</b>
