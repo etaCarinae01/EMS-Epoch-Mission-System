@@ -111,7 +111,7 @@ Copy the <b>Missions</b> folder from the EMS download ,copy and paste the EMS Fo
 	};
 };
 
-<b>Edit server_cleanup.fsm</b><br>Located: dayz_server\system\server_cleanup.fsm
+<b>Edit server_functions.sqf</b><br>Located: dayz_server\init\server_functions.fsm
 
 <b>Around line 298 look for this:</b>
 
